@@ -1,8 +1,11 @@
-GH_PAGES_DIR = "sattbb.github.io"
-
-desc "Build Jekyll site and copy files"
-task :build do
+desc "Build Jekyll site and push to master"
+task :update do
   system "jekyll build"
-  system "rm -r ../#{GH_PAGES_DIR}/*" unless Dir['../#{GH_PAGES_DIR}/*'].empty?
-  system "cp -r _site/* ../#{GH_PAGES_DIR}/"
+  system "cp -r _site/* ../tmp/"
+  system "git checkout master"
+  system "rm -r ./*"
+  system "cp -r ../tmp/* ./"
+  system "git add --all"
+  system "git commit -m \"updated site\""
+  system "git push origin master"
 end
