@@ -13,7 +13,7 @@ toc       : true
 toc_label : "Contents"
 toc_sticky: true
 toc_icon  : "list"
-date      : 2021-02-11 15:52:11 +0100
+date      : 2021-04-09 15:52:11 +0100
 katex     : true
 categories: jekyll blog howto katex
 ---
